@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
         Instantiate(_particles, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         GameGlobals.Instance.playerAlive = false;
-        
+
         //Respawn();
     }
 

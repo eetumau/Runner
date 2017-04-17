@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour {
 
+    private HighScoreWindow highScoreWindow;
+
+    private void Awake()
+    {
+        highScoreWindow = GetComponentInChildren<HighScoreWindow>(true);
+        highScoreWindow.Init();
+    }
 
     public void OnNewGamePressed()
     {
@@ -13,5 +20,15 @@ public class MainMenuUI : MonoBehaviour {
     public void OnQuitGamePressed()
     {
         Application.Quit();
+    }
+
+    public void OnHighScorePressed()
+    {
+        highScoreWindow.OpenWindow();
+    }
+
+    public void OnBackPressed()
+    {
+        highScoreWindow.CloseWindow();
     }
 }

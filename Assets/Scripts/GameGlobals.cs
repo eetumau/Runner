@@ -8,6 +8,7 @@ public class GameGlobals : MonoBehaviour {
     private static GameGlobals _instance;
 
     public GameStateManager stateManager;
+    public HighScoreManager highScoreManager;
 
     public bool playerAlive;
     public int score;
@@ -46,6 +47,7 @@ public class GameGlobals : MonoBehaviour {
     private void Init()
     {
         stateManager = FindObjectOfType<GameStateManager>();
+        highScoreManager = new HighScoreManager(new SaveLoad<HighScoreData>());
         SetDefaults();
  
     }
